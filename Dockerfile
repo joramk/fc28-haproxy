@@ -9,8 +9,8 @@ LABEL   name="Fedora - HAproxy 1.8 with Lets Encrypt" \
         maintainer="joramk" \
 	issues="https://github.com/joramk/fc28-haproxy/issues"
 
-RUN {	dnf -nogpgcheck update -y; \
-        dnf -nogpgcheck install openssl haproxy certbot cronie procps-ng iputils socat yum-cron -y; \
+RUN {	dnf --nogpgcheck update -y; \
+        dnf --nogpgcheck install openssl haproxy certbot cronie procps-ng iputils socat yum-cron -y; \
         dnf clean all && rm -rf /var/cache/yum; \
 }
 
